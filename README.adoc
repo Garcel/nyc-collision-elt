@@ -1,0 +1,72 @@
+= nyc-collision-elt
+:toc: left
+
+== 🕵️‍♂️ Overview
+
+ELT for New York City (NYC) Collision Dataset.
+
+== 🧅 Stack
+
+- https://docs.docker.com/engine/[Docker] and https://docs.docker.com/compose/[Docker Compose]
+- https://www.postgresql.org/[PostgreSQL] with http://postgis.net/[PostGIS]
+- https://docs.python.org/3.12/whatsnew/3.12.html[Python 3.12]
+** https://pypi.org/project/psycopg2/[psycopg2]
+** https://pypi.org/project/requests/[requests]
+** https://pypi.org/project/pandas/[Pandas]
+** https://pypi.org/project/pytest/[pytest]
+** https://pypi.org/project/pre-commit/[pre-commit]
+** https://pypi.org/project/ruff/[Ruff]
+** https://pypi.org/project/black/[Black]
+
+== 🗄️ Data sources
+
+https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95[Motor Vehicle Collisions - Crashes]
+
+== ⚙️ The ELT
+
+In progress...
+
+== 📈 The Dashboard
+
+In progress...
+
+== 💻 Development environment
+
+I'll be using Docker to set up the development environment since I'm used to it and I very like it.
+
+=== 📖 Prerequisites
+
+You must have Docker installed in your system.
+
+=== 🚀 Running it
+
+[,yaml,linenums,highlight=1]
+-----
+docker-compose up
+-----
+
+=== ✅ Running the tests
+
+In progress...but should be simple, like executing `pytest`.
+
+== 🆘 Contributing
+
+I would love your contributions and I'll do my best to provide you with mentorship and support. If you are looking for an issue to tackle, take a look at issues labeled Good first issue.
+
+Get more details in the xref:CONTRIBUTING.adoc[Contributing Guide].
+
+== 🛡️ Security
+
+Please, do not create a regular Issue for reporting a Security issue.
+
+See the xref:SECURITY.adoc[Security Policy] to known more about the procedure details.
+
+== 🪪 License
+
+Apache License 2.0.
+
+== ✍🏼 Author
+
+mailto:garcel.developer@gmail.com["José Antonio Garcel",nyc-collision-elt]
+
+June 17th, 2023.
