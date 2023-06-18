@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  postgres:
+    image: bitnami/postgresql:14.8.0
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRESQL_USERNAME=${POSTGRESQL_USERNAME}
+      - POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
+      - POSTGRESQL_DATABASE=${POSTGRESQL_DATABASE}
+    env_file: .env
+    volumes:
+      - ./pgdata:/bitnami/postgresql
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "${POSTGRESQL_USERNAME}" ]
+      interval: 5s
+      retries: 5
+    restart: always
+    networks:
+      - nyc
+  elt:
+    build: .
+    env_file: .env
+    container_name: nyc-collision-elt
+    command: sh -c "${COMMAND-pre-commit run --all-files && pytest}"
+    volumes:
+      - ".:/app"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - nyc
+networks:
+  nyc:
+    name: "nyc"
