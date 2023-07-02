@@ -9,7 +9,7 @@ There are many different ways to contribute to this project, from documentation,
 
 == 🐛 Issues
 
-If you find a bug in the source code, please open an Issue. 
+If you find a bug in the source code, please open an Issue.
 
 Even better, you can submit a Pull Request with a fix.
 
